@@ -1,0 +1,232 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Topis modules: integration demo</title>
+  <!-- Must run before any CSS so hidden reveal states never flash -->
+  <script>document.documentElement.classList.add('js');</script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@500;700&family=Zen+Kaku+Gothic+New:wght@400;700&display=swap">
+
+  <style>
+    /* STAND-IN palette for this demo only. On the real site, styles.css :root wins. */
+    :root {
+      --washi: #f5f0e6;
+      --sumi: #222222;
+      --nezumi: #6b6660;
+      --ai: #264477;
+      --shu: #c0392b;
+    }
+    body {
+      margin: 0;
+      padding-inline: 16px;
+      background-color: var(--washi);
+      color: var(--sumi);
+      font-family: "Zen Kaku Gothic New", system-ui, sans-serif;
+      line-height: 1.7;
+    }
+    main { max-width: 68rem; margin: 0 auto; }
+    section { padding-block: 6rem; }
+    h1, h2, h3 { font-family: "Shippori Mincho", serif; font-weight: 700; line-height: 1.25; }
+    h1 { font-size: clamp(2.25rem, 6vw, 4rem); margin: 0; }
+    a { color: var(--ai); }
+    :focus-visible { outline: 2px solid var(--ai); outline-offset: 3px; }
+    .section-head { display: flex; gap: 1.5rem; align-items: flex-start; }
+    .kanji { font-family: "Shippori Mincho", serif; font-size: 1.5rem; color: var(--nezumi); }
+    .hero { display: flex; gap: 2rem; align-items: center; justify-content: space-between; flex-wrap: wrap; min-height: 70vh; }
+    .hanko { display: grid; place-items: center; width: 5.5rem; height: 5.5rem; border-radius: 6px;
+             background: var(--shu); color: #fff; font-family: "Shippori Mincho", serif; font-size: 1.15rem; letter-spacing: 0.02em; rotate: -4deg; }
+    .about p { max-width: 40rem; }
+    .about__skills { display: flex; flex-wrap: wrap; gap: 0.5rem; padding: 0; list-style: none; max-width: 40rem; }
+    .about__skills li { padding: 0.25rem 0.75rem; border: 1px solid color-mix(in srgb, var(--nezumi) 60%, transparent); }
+    .ph { outline: 1px dashed color-mix(in srgb, var(--shu) 50%, transparent); outline-offset: 2px; }
+  </style>
+
+  <link rel="stylesheet" href="css/utilities.css">
+  <link rel="stylesheet" href="css/reveal.css">
+  <link rel="stylesheet" href="css/hero.css">
+  <link rel="stylesheet" href="css/kanji.css">
+  <link rel="stylesheet" href="css/story.css">
+  <link rel="stylesheet" href="css/process.css">
+  <link rel="stylesheet" href="css/case-study.css">
+  <link rel="stylesheet" href="css/timeline.css">
+  <link rel="stylesheet" href="css/ai-demo.css">
+
+  <script src="js/core.js" defer></script>
+  <script src="js/projects.js" defer></script>
+  <script src="js/count-up.js" defer></script>
+  <script src="js/case-study.js" defer></script>
+  <script src="js/reveal.js" defer></script>
+  <script src="js/story.js" defer></script>
+  <script src="js/process.js" defer></script>
+  <script src="js/timeline.js" defer></script>
+  <script src="js/ai-demo.js" defer></script>
+</head>
+<body>
+  <!-- Hand-stamped edge filter for the hanko. The region is enlarged so the ink ring isn't clipped. -->
+  <svg width="0" height="0" aria-hidden="true" focusable="false" style="position:absolute">
+    <filter id="hanko-rough" x="-50%" y="-50%" width="200%" height="200%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.045" numOctaves="2" seed="7" result="noise"/>
+      <feDisplacementMap in="SourceGraphic" in2="noise" scale="3" xChannelSelector="R" yChannelSelector="G"/>
+    </filter>
+  </svg>
+
+  <main>
+    <!-- HERO -->
+    <section class="hero" aria-labelledby="hero-title">
+      <div>
+        <h1 id="hero-title" class="hero-title">
+          <span class="hero-line">Software, built</span>
+          <span class="hero-line">with Japanese care.</span>
+        </h1>
+        <p class="ph">Placeholder intro sentence.</p>
+      </div>
+      <div class="hanko" role="img" aria-label="Topis seal">Topis</div>
+    </section>
+
+    <!-- ABOUT -->
+    <section class="about" aria-labelledby="about-title">
+      <div class="section-head">
+        <span class="kanji" data-reveal="brush" lang="ja" aria-hidden="true">仲間</span>
+        <h2 id="about-title" data-reveal>Who we are</h2>
+      </div>
+      <p>
+        We’re Topis Mos, a team of Japanese software engineers based in Kamakura, Japan.
+        We studied computer science together at the Shonan Institute of Technology, earning
+        our bachelor’s and master’s degrees, and we’ve worked side by side as friends and
+        colleagues ever since.
+      </p>
+      <p>
+        We’re senior engineers with more than seven years of experience shipping production
+        software. Our core is backend engineering and AI, and we work across the stack when
+        a project needs it.
+      </p>
+      <ul class="about__skills">
+        <li>Backend development</li>
+        <li>AI and LLM applications</li>
+        <li>Frontend development</li>
+        <li>Full-stack products</li>
+        <li>Blockchain development</li>
+        <li>AI training data and evaluation</li>
+      </ul>
+      <p>
+        We also work on AI training: creating, reviewing and evaluating the data used to
+        train and test large language models<span class="ph"> on platforms such as Snorkel,
+        Handshake, micro1 and DataAnnotation</span>. That work keeps us close to how models
+        actually behave, which shapes how we build AI products for clients.
+      </p>
+    </section>
+
+    <!-- TIMELINE (replaces the three static clocks) -->
+    <section aria-labelledby="tz-title">
+      <h2 id="tz-title" data-reveal>Tokyo, San Francisco, New York</h2>
+      <div class="tz" data-timeline>
+        <p>Our Tokyo team overlaps with US West Coast business hours early each morning, Pacific time.</p>
+      </div>
+    </section>
+
+    <!-- PRINCIPLES: pinned scroll story -->
+    <section class="story" data-story aria-labelledby="way-title">
+      <div class="section-head">
+        <span class="kanji" data-reveal="brush" lang="ja" aria-hidden="true">道</span>
+        <h2 id="way-title" data-reveal>The Japanese way of building software</h2>
+      </div>
+      <div class="story__layout">
+        <div class="story__pin" aria-hidden="true">
+          <div class="story__words">
+            <span class="story__word" lang="ja">ものづくり</span>
+            <span class="story__word" lang="ja">改善</span>
+            <span class="story__word" lang="ja">報連相</span>
+            <span class="story__word" lang="ja">おもてなし</span>
+          </div>
+          <div class="story__progress"><span class="story__progress-fill"></span></div>
+        </div>
+        <ol class="story__steps">
+          <li class="story__step principle" data-reveal>
+            <p class="story__step-word" lang="ja">ものづくり</p>
+            <h3>Monozukuri: craftsmanship</h3>
+            <p class="ph">Placeholder description.</p>
+          </li>
+          <li class="story__step principle" data-reveal>
+            <p class="story__step-word" lang="ja">改善</p>
+            <h3>Kaizen: continuous improvement</h3>
+            <p class="ph">Placeholder description.</p>
+          </li>
+          <li class="story__step principle" data-reveal>
+            <p class="story__step-word" lang="ja">報連相</p>
+            <h3>Hō-ren-sō: report, contact, consult</h3>
+            <p class="ph">Placeholder description.</p>
+          </li>
+          <li class="story__step principle" data-reveal>
+            <p class="story__step-word" lang="ja">おもてなし</p>
+            <h3>Omotenashi: anticipating needs</h3>
+            <p class="ph">Placeholder description.</p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- PROCESS -->
+    <section aria-labelledby="process-title">
+      <div class="section-head">
+        <span class="kanji" data-reveal="brush" lang="ja" aria-hidden="true">流れ</span>
+        <h2 id="process-title" data-reveal>How a project works</h2>
+      </div>
+      <ol class="process" data-process>
+        <li class="process__step"><span class="process__num">01</span><h3>Discover</h3><p class="ph">Placeholder.</p></li>
+        <li class="process__step"><span class="process__num">02</span><h3>Design</h3><p class="ph">Placeholder.</p></li>
+        <li class="process__step"><span class="process__num">03</span><h3>Build</h3><p class="ph">Placeholder.</p></li>
+        <li class="process__step"><span class="process__num">04</span><h3>Launch</h3><p class="ph">Placeholder.</p></li>
+      </ol>
+    </section>
+
+    <!-- SELECTED WORK: rows rendered from js/projects.js -->
+    <section id="work" aria-labelledby="work-title">
+      <div class="section-head">
+        <span class="kanji" data-reveal="brush" lang="ja" aria-hidden="true">実績</span>
+        <h2 id="work-title" data-reveal>Selected work</h2>
+      </div>
+      <p>
+        Most of our client work is under NDA, so we don’t name clients or show code.
+        These are the kinds of systems we’ve built. We’re happy to walk through the details
+        on a call, within what our agreements allow.
+      </p>
+      <ol class="work-list" data-work-list>
+        <li><noscript>Case studies need JavaScript. Contact us and we'll send them over.</noscript></li>
+      </ol>
+    </section>
+
+    <!-- TRY OUR AI -->
+    <section class="ai-demo" data-ai-demo aria-labelledby="ai-title">
+      <h2 id="ai-title" data-reveal>Try our AI</h2>
+      <p>Describe your product idea and get a suggested MVP feature list and rough build phases.</p>
+      <form class="ai-demo__form" novalidate>
+        <label for="ai-idea">Your product idea</label>
+        <textarea id="ai-idea" name="idea" maxlength="500" rows="4"
+                  placeholder="e.g. A booking app for independent yoga studios with class packs and waitlists"></textarea>
+        <div class="ai-demo__meta">
+          <span class="ai-demo__count" data-ai-count aria-live="off">0 / 500</span>
+          <button class="ai-demo__submit" type="submit">Get an MVP plan</button>
+        </div>
+      </form>
+      <p class="ai-demo__notice" data-ai-notice role="status" hidden></p>
+      <div class="ai-demo__output" data-ai-output aria-live="polite" aria-busy="false" hidden>
+        <div class="ai-demo__typing" data-ai-typing hidden><i></i><i></i><i></i><span class="visually-hidden">Generating a plan…</span></div>
+        <p class="ai-demo__answer" data-ai-answer></p>
+      </div>
+      <p><small>Answers are AI-generated suggestions, not a quote.</small></p>
+    </section>
+  </main>
+
+  <!-- Case-study detail view -->
+  <dialog class="case" data-case aria-labelledby="case-title">
+    <div class="case__inner">
+      <button type="button" class="case__close" data-case-close>Close<span class="visually-hidden"> case study</span></button>
+      <article data-case-body></article>
+    </div>
+  </dialog>
+</body>
+</html>

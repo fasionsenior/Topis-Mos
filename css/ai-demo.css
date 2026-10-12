@@ -1,0 +1,115 @@
+/* "Try our AI" demo */
+.ai-demo__form {
+  display: grid;
+  gap: 0.5rem;
+  max-width: 40rem;
+}
+
+.ai-demo__form label {
+  font-weight: 700;
+}
+
+.ai-demo__form textarea {
+  width: 100%;
+  min-height: 7rem;
+  padding: 0.75rem 1rem;
+  border: 1px solid var(--nezumi, #8a8580);
+  border-radius: 0;
+  background: color-mix(in srgb, var(--washi, #f5f0e6) 60%, #fff);
+  color: var(--sumi, #222);
+  font: inherit;
+  line-height: 1.6;
+  resize: vertical;
+}
+
+.ai-demo__form textarea:focus-visible {
+  outline: 2px solid var(--ai, #264477);
+  outline-offset: 2px;
+}
+
+.ai-demo__meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+}
+
+.ai-demo__count {
+  color: var(--nezumi, #6b6660);
+  font-size: 0.875rem;
+  font-variant-numeric: tabular-nums;
+}
+
+.ai-demo__submit {
+  padding: 0.75rem 1.5rem;
+  border: 0;
+  background: var(--ai, #264477);
+  color: var(--washi, #f5f0e6);
+  font: inherit;
+  cursor: pointer;
+}
+
+.ai-demo__submit:disabled {
+  opacity: 0.6;
+  cursor: progress;
+}
+
+.ai-demo__submit:focus-visible {
+  outline: 2px solid var(--ai, #264477);
+  outline-offset: 3px;
+}
+
+.ai-demo__notice {
+  margin: 0.75rem 0 0;
+  max-width: 40rem;
+}
+
+.ai-demo__output {
+  max-width: 40rem;
+  margin-top: 1.5rem;
+  padding: 1.25rem 1.5rem;
+  border-left: 2px solid var(--ai, #264477);
+  background: color-mix(in srgb, var(--washi, #f5f0e6) 60%, #fff);
+}
+
+.ai-demo__answer {
+  margin: 0;
+  white-space: pre-wrap;
+  font: inherit;
+  line-height: 1.7;
+}
+
+.ai-demo__output[hidden],
+.ai-demo__notice[hidden],
+.ai-demo__typing[hidden] {
+  display: none;
+}
+
+/* Typing indicator: three dots; static with reduced motion */
+.ai-demo__typing {
+  display: inline-flex;
+  gap: 0.3rem;
+  padding-block: 0.25rem;
+}
+
+.ai-demo__typing i {
+  width: 0.4rem;
+  height: 0.4rem;
+  border-radius: 50%;
+  background: var(--nezumi, #8a8580);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .ai-demo__typing i {
+    animation: ai-dot 1.2s ease-in-out infinite;
+  }
+
+  .ai-demo__typing i:nth-of-type(2) { animation-delay: 0.15s; }
+  .ai-demo__typing i:nth-of-type(3) { animation-delay: 0.3s; }
+}
+
+@keyframes ai-dot {
+  0%, 60%, 100% { opacity: 0.3; transform: translateY(0); }
+  30%           { opacity: 1;   transform: translateY(-3px); }
+}

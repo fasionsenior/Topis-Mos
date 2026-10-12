@@ -1,0 +1,464 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Topis Mos · Senior backend and AI engineers in Fujisawa, Japan</title>
+  <meta name="description" content="Topis Mos is a team of senior Japanese software engineers in Fujisawa. We partner with US startups and agencies, with a focus on backend systems and AI.">
+  <meta property="og:title" content="Topis Mos · Senior backend and AI engineers in Fujisawa, Japan">
+  <meta property="og:description" content="A team of senior Japanese software engineers, partnering with US startups and agencies on backend systems and AI.">
+  <meta property="og:type" content="website">
+  <!-- Must run before any CSS so hidden reveal states never flash -->
+  <script>document.documentElement.classList.add('js');</script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@500;600;700&family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap">
+
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="css/utilities.css">
+  <link rel="stylesheet" href="css/hero.css">
+  <link rel="stylesheet" href="css/reveal.css">
+  <link rel="stylesheet" href="css/kanji.css">
+
+  <script src="js/core.js" defer></script>
+  <script src="js/reveal.js" defer></script>
+  <script src="js/hanaikada.js" defer></script>
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <!-- Hand-stamped edge filter for the hanko. The region is enlarged so the ink ring isn't clipped. -->
+  <svg width="0" height="0" aria-hidden="true" focusable="false" class="visually-hidden">
+    <!-- Fine, even grain: a coarse noise makes isolated bumps that read as glitches -->
+    <filter id="hanko-rough" x="-10%" y="-10%" width="120%" height="120%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.55" numOctaves="2" seed="7" result="noise"/>
+      <feDisplacementMap in="SourceGraphic" in2="noise" scale="2" xChannelSelector="R" yChannelSelector="G"/>
+    </filter>
+  </svg>
+
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <div class="wrap site-header__inner">
+      <a class="logo" href="#top">Topis Mos</a>
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-menu" data-menu-toggle>Menu</button>
+      <nav class="site-nav" id="site-menu" aria-label="Main">
+        <ul>
+          <li><a href="#about">About</a></li>
+          <li><a href="#way">Our way</a></li>
+          <li><a href="#services">What we do</a></li>
+          <li><a href="#process">How we work</a></li>
+          <li><a class="button button--small" href="#contact">Contact us</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <!-- HERO -->
+    <section class="hero" id="top" aria-labelledby="hero-title">
+      <div class="wrap grid hero__grid">
+        <div class="hero__main">
+          <p class="eyebrow">Fujisawa, Japan · Backend &amp; AI</p>
+          <h1 id="hero-title" class="hero-title">
+            <span class="hero-line">Good software</span>
+            <span class="hero-line">starts with</span>
+            <span class="hero-line">good people.</span>
+          </h1>
+          <p class="lead hero__lead">
+            Topis Mos is a team of senior Japanese software engineers in Fujisawa. We work with
+            US startups and agencies as their development partner, with our focus on backend
+            systems and AI.
+          </p>
+          <div class="actions">
+            <a class="button" href="#contact">Contact us <span class="button__arrow" aria-hidden="true">→</span></a>
+            <a class="button button--quiet" href="#about">Learn more</a>
+          </div>
+        </div>
+
+        <div class="hero__aside">
+          <p class="hero__vertical" lang="ja" aria-hidden="true">藤沢から、<br>心をこめたものづくりを。</p>
+          <div class="hanko" role="img" aria-label="Topis Mos seal">Topis<br>Mos</div>
+        </div>
+      </div>
+
+      <div class="wrap">
+        <ul class="facts" aria-label="At a glance">
+          <li>
+            <span class="facts__label">Based in</span>
+            <span class="facts__value">Fujisawa, Japan</span>
+          </li>
+          <li>
+            <span class="facts__label">Experience</span>
+            <span class="facts__value">7+ years, senior engineers</span>
+          </li>
+          <li>
+            <span class="facts__label">Main focus</span>
+            <span class="facts__value">Backend and AI</span>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- 一 WHO WE ARE -->
+    <section class="section" id="about" aria-labelledby="about-title">
+      <div class="wrap grid">
+        <div class="section__aside">
+          <span class="section__num" aria-hidden="true">01</span>
+          <p class="section__label">Who we are</p>
+          <span class="kanji" data-reveal="brush" lang="ja" aria-hidden="true">私たちについて</span>
+        </div>
+
+        <div class="section__body">
+          <h2 id="about-title" class="section-title" data-reveal>Friends and colleagues, building software from Fujisawa.</h2>
+
+          <div class="prose">
+            <p>
+              We’re Topis Mos, a team of Japanese software engineers based in Fujisawa, Japan.
+              We’re friends as well as colleagues, and we hold bachelor’s and master’s degrees in
+              computer science from the Shonan Institute of Technology.
+            </p>
+            <p>
+              Each of us is a senior engineer with more than seven years of experience. Our core
+              is backend engineering and AI, and we work across the whole stack when a project
+              needs it.
+            </p>
+            <p>
+              We also do AI training work: creating, reviewing and evaluating the data used to
+              train and test large language models.<span class="ph"> That work keeps us close to
+              how models actually behave.</span>
+            </p>
+          </div>
+
+          <ul class="pillars">
+            <li class="pillar">
+              <span class="pillar__mark" lang="ja" aria-hidden="true">技</span>
+              <h3 class="pillar__title">Craft</h3>
+              <p class="pillar__kicker">Our foundation</p>
+              <p class="pillar__text">Senior engineers with more than seven years of experience across frontend, backend, AI and blockchain.</p>
+            </li>
+            <li class="pillar">
+              <span class="pillar__mark" lang="ja" aria-hidden="true">人</span>
+              <h3 class="pillar__title">People</h3>
+              <p class="pillar__kicker">Our strength</p>
+              <p class="pillar__text">A close team of friends and colleagues with computer science degrees from the Shonan Institute of Technology.</p>
+            </li>
+            <li class="pillar">
+              <span class="pillar__mark" lang="ja" aria-hidden="true">信</span>
+              <h3 class="pillar__title">Trust</h3>
+              <p class="pillar__kicker">Our promise</p>
+              <p class="pillar__text ph">Clear communication and honest estimates, so you always know where your project stands.</p>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- 二 OUR WAY -->
+    <section class="section" id="way" aria-labelledby="way-title">
+      <div class="wrap grid">
+        <div class="section__aside">
+          <span class="section__num" aria-hidden="true">02</span>
+          <p class="section__label">Our way</p>
+          <span class="kanji" data-reveal="brush" lang="ja" aria-hidden="true">大切にしていること</span>
+        </div>
+
+        <div class="section__body">
+          <h2 id="way-title" class="section-title" data-reveal>Technology matters.<br> The people behind it matter more.</h2>
+          <p class="lead section__intro">Four ideas from Japanese working culture shape how we work.</p>
+
+          <ul class="principles">
+            <li class="principle" data-reveal>
+              <p class="principle__word" lang="ja">ものづくり</p>
+              <div class="principle__text">
+                <h3><span class="principle__romaji">Monozukuri</span> Craftsmanship</h3>
+                <p class="ph">Pride in making things well, including the parts nobody sees: clear data models, tests, and code the next engineer can read.</p>
+              </div>
+            </li>
+            <li class="principle" data-reveal data-reveal-delay="1">
+              <p class="principle__word" lang="ja">改善</p>
+              <div class="principle__text">
+                <h3><span class="principle__romaji">Kaizen</span> Continuous improvement</h3>
+                <p class="ph">Small, steady improvements over big rewrites. Every release should leave the product a little better than the last.</p>
+              </div>
+            </li>
+            <li class="principle" data-reveal>
+              <p class="principle__word" lang="ja">報連相</p>
+              <div class="principle__text">
+                <h3><span class="principle__romaji">Hō-ren-sō</span> Report, contact, consult</h3>
+                <p class="ph">Regular updates, early warnings and shared decisions, so nothing is a surprise across time zones.</p>
+              </div>
+            </li>
+            <li class="principle" data-reveal data-reveal-delay="1">
+              <p class="principle__word" lang="ja">おもてなし</p>
+              <div class="principle__text">
+                <h3><span class="principle__romaji">Omotenashi</span> Anticipating needs</h3>
+                <p class="ph">Thinking ahead for the people we work with, and for the people who will use what we build.</p>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- 三 WHAT WE DO -->
+    <section class="section" id="services" aria-labelledby="services-title">
+      <div class="wrap grid">
+        <div class="section__aside">
+          <span class="section__num" aria-hidden="true">03</span>
+          <p class="section__label">What we do</p>
+          <span class="kanji" data-reveal="brush" lang="ja" aria-hidden="true">できること</span>
+        </div>
+
+        <div class="section__body">
+          <h2 id="services-title" class="section-title" data-reveal>Backend and AI at the core. The full stack when you need it.</h2>
+          <p class="lead section__intro ph">We join your team as senior engineers, or take a product from first idea to launch.</p>
+
+          <ul class="services">
+            <li class="service">
+              <span class="service__num" aria-hidden="true">01</span>
+              <div class="service__name">
+                <h3>Backend engineering</h3>
+                <span class="tag">Main focus</span>
+              </div>
+              <p class="service__text">APIs, data models, integrations and the services your product runs on.</p>
+            </li>
+            <li class="service">
+              <span class="service__num" aria-hidden="true">02</span>
+              <div class="service__name">
+                <h3>AI and LLM applications</h3>
+                <span class="tag">Main focus</span>
+              </div>
+              <p class="service__text">Products and features built on large language models, from first prototype to production.</p>
+            </li>
+            <li class="service">
+              <span class="service__num" aria-hidden="true">03</span>
+              <div class="service__name"><h3>Full-stack products</h3></div>
+              <p class="service__text">Frontend and backend together, so one team owns the whole product.</p>
+            </li>
+            <li class="service">
+              <span class="service__num" aria-hidden="true">04</span>
+              <div class="service__name"><h3>Blockchain development</h3></div>
+              <p class="service__text">Blockchain-based applications and the backend services around them.</p>
+            </li>
+            <li class="service">
+              <span class="service__num" aria-hidden="true">05</span>
+              <div class="service__name"><h3>AI training and evaluation</h3></div>
+              <p class="service__text">Creating, reviewing and evaluating the training and evaluation data behind large language models.</p>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- 四 HOW WE WORK -->
+    <section class="section" id="process" aria-labelledby="process-title">
+      <div class="wrap grid">
+        <div class="section__aside">
+          <span class="section__num" aria-hidden="true">04</span>
+          <p class="section__label">How we work</p>
+          <span class="kanji" data-reveal="brush" lang="ja" aria-hidden="true">ご依頼の流れ</span>
+        </div>
+
+        <div class="section__body">
+          <h2 id="process-title" class="section-title" data-reveal>A clear path from first call to launch.</h2>
+
+          <ol class="steps">
+            <li class="step">
+              <span class="step__num" aria-hidden="true">01</span>
+              <h3>Discover</h3>
+              <p class="ph">We learn your goals, users and constraints, and agree on what success looks like.</p>
+            </li>
+            <li class="step">
+              <span class="step__num" aria-hidden="true">02</span>
+              <h3>Design</h3>
+              <p class="ph">We plan the architecture and scope the first release with you.</p>
+            </li>
+            <li class="step">
+              <span class="step__num" aria-hidden="true">03</span>
+              <h3>Build</h3>
+              <p class="ph">We build in short cycles and share progress at every step.</p>
+            </li>
+            <li class="step">
+              <span class="step__num" aria-hidden="true">04</span>
+              <h3>Launch</h3>
+              <p class="ph">We ship, watch how it performs, and keep improving it.</p>
+            </li>
+          </ol>
+        </div>
+      </div>
+    </section>
+
+    <!-- 05 ACROSS THE PACIFIC -->
+    <section class="section" id="pacific" aria-labelledby="pacific-title">
+      <div class="wrap grid">
+        <div class="section__aside">
+          <span class="section__num" aria-hidden="true">05</span>
+          <p class="section__label">Across the Pacific</p>
+          <span class="kanji" data-reveal="brush" lang="ja" aria-hidden="true">太平洋をこえて</span>
+        </div>
+
+        <div class="section__body">
+          <h2 id="pacific-title" class="section-title" data-reveal>Two sides of the Pacific. One shared project.</h2>
+          <p class="lead section__intro">We’re in Fujisawa, Japan, working with startups and agencies across the United States.</p>
+        </div>
+
+        <!-- Dot map generated from Natural Earth land data (public domain).
+             Projection: equirectangular, 118°E–60°W, 14°N–74°N, x scaled by cos 45°.
+             Arcs are the true great-circle routes, which is why they bend north over Alaska. -->
+        <figure class="pacific">
+          <div class="pacific__map">
+            <svg viewBox="0 0 1287 600" role="img" aria-labelledby="pacific-map-title">
+              <title id="pacific-map-title">Map of the North Pacific with routes from Fujisawa, Japan to Seattle, San Francisco, Los Angeles, Austin, Chicago, New York, Boston and Miami</title>
+              <path class="pacific__land" d="M42 6h0M54 6h0M66 6h0M174 6h0M834 6h0M846 6h0M858 6h0M870 6h0M882 6h0M966 6h0M1002 6h0M1014 6h0M1038 6h0M1050 6h0M1062 6h0M1086 6h0M1098 6h0M1122 6h0M1134 6h0M1146 6h0M1158 6h0M12 18h0M24 18h0M36 18h0M48 18h0M60 18h0M168 18h0M180 18h0M192 18h0M216 18h0M828 18h0M840 18h0M852 18h0M876 18h0M888 18h0M900 18h0M912 18h0M924 18h0M936 18h0M960 18h0M1008 18h0M1020 18h0M1044 18h0M1080 18h0M1092 18h0M1116 18h0M1128 18h0M1152 18h0M1164 18h0M1176 18h0M6 30h0M18 30h0M30 30h0M42 30h0M54 30h0M66 30h0M78 30h0M102 30h0M114 30h0M126 30h0M138 30h0M150 30h0M162 30h0M174 30h0M186 30h0M198 30h0M210 30h0M222 30h0M234 30h0M270 30h0M282 30h0M438 30h0M606 30h0M882 30h0M894 30h0M906 30h0M918 30h0M930 30h0M942 30h0M954 30h0M966 30h0M1038 30h0M1050 30h0M1086 30h0M1098 30h0M1110 30h0M1122 30h0M1134 30h0M1146 30h0M1158 30h0M1170 30h0M1182 30h0M1194 30h0M12 42h0M24 42h0M36 42h0M48 42h0M60 42h0M72 42h0M84 42h0M96 42h0M108 42h0M120 42h0M132 42h0M144 42h0M156 42h0M168 42h0M180 42h0M192 42h0M204 42h0M216 42h0M228 42h0M240 42h0M252 42h0M264 42h0M276 42h0M288 42h0M360 42h0M372 42h0M384 42h0M396 42h0M408 42h0M564 42h0M576 42h0M588 42h0M600 42h0M612 42h0M624 42h0M636 42h0M648 42h0M660 42h0M672 42h0M684 42h0M696 42h0M780 42h0M804 42h0M828 42h0M888 42h0M900 42h0M912 42h0M924 42h0M936 42h0M948 42h0M960 42h0M972 42h0M984 42h0M996 42h0M1020 42h0M1044 42h0M1056 42h0M1116 42h0M1176 42h0M1188 42h0M1200 42h0M1212 42h0M1224 42h0M1236 42h0M6 54h0M18 54h0M30 54h0M42 54h0M54 54h0M66 54h0M78 54h0M90 54h0M102 54h0M114 54h0M126 54h0M138 54h0M150 54h0M162 54h0M174 54h0M186 54h0M198 54h0M210 54h0M222 54h0M234 54h0M246 54h0M258 54h0M270 54h0M282 54h0M294 54h0M306 54h0M318 54h0M330 54h0M342 54h0M354 54h0M366 54h0M378 54h0M390 54h0M402 54h0M414 54h0M426 54h0M438 54h0M546 54h0M558 54h0M570 54h0M582 54h0M594 54h0M606 54h0M618 54h0M630 54h0M642 54h0M654 54h0M666 54h0M678 54h0M690 54h0M702 54h0M714 54h0M726 54h0M738 54h0M750 54h0M762 54h0M774 54h0M786 54h0M798 54h0M810 54h0M822 54h0M834 54h0M846 54h0M858 54h0M870 54h0M882 54h0M894 54h0M918 54h0M954 54h0M1026 54h0M1062 54h0M1086 54h0M1110 54h0M1122 54h0M1134 54h0M1194 54h0M1206 54h0M1218 54h0M12 66h0M24 66h0M36 66h0M48 66h0M60 66h0M72 66h0M84 66h0M96 66h0M108 66h0M120 66h0M132 66h0M144 66h0M156 66h0M168 66h0M180 66h0M192 66h0M204 66h0M216 66h0M228 66h0M240 66h0M252 66h0M264 66h0M276 66h0M288 66h0M300 66h0M312 66h0M324 66h0M336 66h0M348 66h0M360 66h0M372 66h0M384 66h0M396 66h0M408 66h0M420 66h0M432 66h0M444 66h0M456 66h0M468 66h0M564 66h0M576 66h0M588 66h0M600 66h0M612 66h0M624 66h0M636 66h0M648 66h0M660 66h0M672 66h0M684 66h0M696 66h0M708 66h0M720 66h0M732 66h0M744 66h0M756 66h0M768 66h0M780 66h0M792 66h0M804 66h0M816 66h0M828 66h0M840 66h0M852 66h0M864 66h0M876 66h0M888 66h0M900 66h0M912 66h0M924 66h0M936 66h0M948 66h0M960 66h0M972 66h0M984 66h0M996 66h0M1008 66h0M1020 66h0M1044 66h0M1056 66h0M1068 66h0M1080 66h0M1104 66h0M1116 66h0M1128 66h0M1176 66h0M1200 66h0M1212 66h0M1224 66h0M1236 66h0M1248 66h0M6 78h0M18 78h0M30 78h0M42 78h0M54 78h0M66 78h0M78 78h0M90 78h0M102 78h0M114 78h0M126 78h0M138 78h0M150 78h0M162 78h0M174 78h0M186 78h0M198 78h0M210 78h0M222 78h0M234 78h0M246 78h0M258 78h0M270 78h0M282 78h0M294 78h0M306 78h0M318 78h0M330 78h0M342 78h0M354 78h0M366 78h0M378 78h0M390 78h0M402 78h0M414 78h0M426 78h0M438 78h0M450 78h0M462 78h0M474 78h0M486 78h0M498 78h0M546 78h0M570 78h0M582 78h0M594 78h0M606 78h0M618 78h0M630 78h0M642 78h0M654 78h0M666 78h0M678 78h0M690 78h0M702 78h0M714 78h0M726 78h0M738 78h0M750 78h0M762 78h0M774 78h0M786 78h0M798 78h0M810 78h0M822 78h0M834 78h0M846 78h0M858 78h0M870 78h0M882 78h0M894 78h0M906 78h0M918 78h0M930 78h0M942 78h0M954 78h0M966 78h0M978 78h0M990 78h0M1002 78h0M1014 78h0M1026 78h0M1038 78h0M1050 78h0M1062 78h0M1074 78h0M1086 78h0M1098 78h0M1194 78h0M1206 78h0M1218 78h0M1230 78h0M1254 78h0M1266 78h0M12 90h0M24 90h0M36 90h0M48 90h0M60 90h0M72 90h0M84 90h0M96 90h0M108 90h0M120 90h0M132 90h0M144 90h0M156 90h0M168 90h0M180 90h0M192 90h0M204 90h0M216 90h0M228 90h0M240 90h0M252 90h0M264 90h0M276 90h0M288 90h0M300 90h0M312 90h0M324 90h0M336 90h0M348 90h0M360 90h0M372 90h0M384 90h0M396 90h0M408 90h0M420 90h0M432 90h0M468 90h0M480 90h0M492 90h0M540 90h0M552 90h0M564 90h0M576 90h0M588 90h0M600 90h0M612 90h0M624 90h0M636 90h0M648 90h0M660 90h0M672 90h0M684 90h0M696 90h0M708 90h0M720 90h0M732 90h0M744 90h0M756 90h0M768 90h0M780 90h0M792 90h0M804 90h0M816 90h0M828 90h0M840 90h0M852 90h0M864 90h0M876 90h0M888 90h0M900 90h0M912 90h0M924 90h0M936 90h0M948 90h0M960 90h0M972 90h0M984 90h0M996 90h0M1008 90h0M1020 90h0M1032 90h0M1044 90h0M1056 90h0M1068 90h0M1080 90h0M1092 90h0M1104 90h0M1116 90h0M1164 90h0M1176 90h0M1188 90h0M1200 90h0M1212 90h0M1224 90h0M1236 90h0M6 102h0M18 102h0M30 102h0M42 102h0M54 102h0M66 102h0M78 102h0M90 102h0M102 102h0M114 102h0M126 102h0M138 102h0M150 102h0M162 102h0M174 102h0M186 102h0M198 102h0M210 102h0M222 102h0M234 102h0M246 102h0M258 102h0M270 102h0M282 102h0M294 102h0M306 102h0M318 102h0M330 102h0M342 102h0M354 102h0M366 102h0M378 102h0M390 102h0M402 102h0M414 102h0M426 102h0M582 102h0M594 102h0M606 102h0M618 102h0M630 102h0M642 102h0M654 102h0M666 102h0M678 102h0M690 102h0M702 102h0M714 102h0M726 102h0M738 102h0M750 102h0M762 102h0M774 102h0M786 102h0M798 102h0M810 102h0M822 102h0M834 102h0M846 102h0M858 102h0M870 102h0M882 102h0M894 102h0M906 102h0M918 102h0M930 102h0M942 102h0M954 102h0M966 102h0M978 102h0M990 102h0M1002 102h0M1014 102h0M1026 102h0M1038 102h0M1050 102h0M1062 102h0M1074 102h0M1098 102h0M1110 102h0M1134 102h0M1206 102h0M1218 102h0M1230 102h0M1242 102h0M1254 102h0M12 114h0M24 114h0M36 114h0M48 114h0M60 114h0M72 114h0M84 114h0M96 114h0M108 114h0M120 114h0M132 114h0M144 114h0M156 114h0M168 114h0M180 114h0M192 114h0M204 114h0M216 114h0M228 114h0M240 114h0M252 114h0M264 114h0M276 114h0M288 114h0M300 114h0M312 114h0M336 114h0M348 114h0M360 114h0M372 114h0M384 114h0M396 114h0M408 114h0M420 114h0M432 114h0M552 114h0M564 114h0M576 114h0M588 114h0M600 114h0M612 114h0M624 114h0M636 114h0M648 114h0M660 114h0M672 114h0M684 114h0M696 114h0M708 114h0M720 114h0M732 114h0M744 114h0M756 114h0M768 114h0M780 114h0M792 114h0M804 114h0M816 114h0M828 114h0M840 114h0M852 114h0M864 114h0M876 114h0M888 114h0M900 114h0M912 114h0M924 114h0M936 114h0M948 114h0M960 114h0M972 114h0M984 114h0M996 114h0M1008 114h0M1020 114h0M1032 114h0M1044 114h0M1056 114h0M1128 114h0M1212 114h0M1224 114h0M1236 114h0M6 126h0M18 126h0M30 126h0M42 126h0M54 126h0M66 126h0M78 126h0M90 126h0M102 126h0M114 126h0M126 126h0M138 126h0M150 126h0M162 126h0M174 126h0M186 126h0M198 126h0M210 126h0M222 126h0M234 126h0M246 126h0M258 126h0M270 126h0M306 126h0M330 126h0M342 126h0M354 126h0M366 126h0M378 126h0M546 126h0M558 126h0M570 126h0M582 126h0M594 126h0M606 126h0M618 126h0M630 126h0M642 126h0M654 126h0M666 126h0M678 126h0M690 126h0M702 126h0M714 126h0M726 126h0M738 126h0M750 126h0M762 126h0M774 126h0M786 126h0M798 126h0M810 126h0M822 126h0M834 126h0M846 126h0M858 126h0M870 126h0M882 126h0M894 126h0M906 126h0M918 126h0M930 126h0M942 126h0M954 126h0M966 126h0M978 126h0M990 126h0M1002 126h0M1014 126h0M1026 126h0M1038 126h0M1170 126h0M1182 126h0M1194 126h0M12 138h0M24 138h0M36 138h0M48 138h0M60 138h0M72 138h0M84 138h0M96 138h0M108 138h0M120 138h0M132 138h0M144 138h0M156 138h0M168 138h0M180 138h0M192 138h0M204 138h0M216 138h0M228 138h0M240 138h0M252 138h0M312 138h0M324 138h0M528 138h0M552 138h0M564 138h0M576 138h0M588 138h0M600 138h0M612 138h0M624 138h0M648 138h0M660 138h0M696 138h0M708 138h0M720 138h0M732 138h0M744 138h0M756 138h0M768 138h0M780 138h0M792 138h0M804 138h0M816 138h0M828 138h0M840 138h0M852 138h0M864 138h0M876 138h0M888 138h0M900 138h0M912 138h0M924 138h0M936 138h0M948 138h0M960 138h0M972 138h0M984 138h0M996 138h0M1008 138h0M1020 138h0M1032 138h0M1164 138h0M1176 138h0M1188 138h0M1200 138h0M1212 138h0M6 150h0M18 150h0M30 150h0M42 150h0M54 150h0M66 150h0M78 150h0M90 150h0M102 150h0M114 150h0M126 150h0M138 150h0M150 150h0M162 150h0M246 150h0M306 150h0M318 150h0M570 150h0M582 150h0M594 150h0M606 150h0M618 150h0M738 150h0M750 150h0M762 150h0M774 150h0M786 150h0M798 150h0M810 150h0M822 150h0M834 150h0M846 150h0M858 150h0M870 150h0M882 150h0M894 150h0M906 150h0M918 150h0M930 150h0M942 150h0M954 150h0M966 150h0M978 150h0M990 150h0M1002 150h0M1014 150h0M1026 150h0M1038 150h0M1158 150h0M1170 150h0M1182 150h0M1194 150h0M1206 150h0M1218 150h0M1254 150h0M12 162h0M24 162h0M36 162h0M48 162h0M60 162h0M72 162h0M84 162h0M96 162h0M108 162h0M120 162h0M132 162h0M144 162h0M156 162h0M276 162h0M288 162h0M300 162h0M312 162h0M600 162h0M612 162h0M624 162h0M756 162h0M768 162h0M780 162h0M792 162h0M804 162h0M816 162h0M828 162h0M840 162h0M852 162h0M864 162h0M876 162h0M888 162h0M900 162h0M912 162h0M924 162h0M936 162h0M948 162h0M960 162h0M972 162h0M984 162h0M996 162h0M1008 162h0M1020 162h0M1032 162h0M1044 162h0M1176 162h0M1188 162h0M1200 162h0M1212 162h0M1224 162h0M1236 162h0M1248 162h0M1260 162h0M1272 162h0M6 174h0M18 174h0M30 174h0M42 174h0M54 174h0M66 174h0M78 174h0M90 174h0M102 174h0M114 174h0M126 174h0M138 174h0M270 174h0M282 174h0M294 174h0M306 174h0M318 174h0M762 174h0M786 174h0M798 174h0M810 174h0M822 174h0M834 174h0M846 174h0M858 174h0M870 174h0M882 174h0M894 174h0M906 174h0M918 174h0M930 174h0M942 174h0M954 174h0M966 174h0M978 174h0M990 174h0M1002 174h0M1014 174h0M1026 174h0M1038 174h0M1050 174h0M1062 174h0M1074 174h0M1182 174h0M1194 174h0M1206 174h0M1218 174h0M1230 174h0M1242 174h0M1254 174h0M1266 174h0M12 186h0M24 186h0M36 186h0M48 186h0M60 186h0M72 186h0M84 186h0M96 186h0M108 186h0M120 186h0M276 186h0M288 186h0M300 186h0M564 186h0M780 186h0M792 186h0M804 186h0M816 186h0M828 186h0M840 186h0M852 186h0M864 186h0M876 186h0M888 186h0M900 186h0M912 186h0M924 186h0M936 186h0M948 186h0M960 186h0M972 186h0M984 186h0M996 186h0M1008 186h0M1020 186h0M1032 186h0M1044 186h0M1056 186h0M1068 186h0M1080 186h0M1092 186h0M1104 186h0M1164 186h0M1176 186h0M1188 186h0M1200 186h0M1212 186h0M1224 186h0M1236 186h0M1248 186h0M1260 186h0M1272 186h0M1284 186h0M6 198h0M18 198h0M30 198h0M42 198h0M54 198h0M66 198h0M78 198h0M90 198h0M102 198h0M114 198h0M126 198h0M138 198h0M150 198h0M174 198h0M270 198h0M282 198h0M294 198h0M798 198h0M810 198h0M822 198h0M834 198h0M846 198h0M858 198h0M870 198h0M882 198h0M894 198h0M906 198h0M918 198h0M930 198h0M942 198h0M954 198h0M966 198h0M978 198h0M990 198h0M1002 198h0M1014 198h0M1026 198h0M1038 198h0M1050 198h0M1062 198h0M1074 198h0M1086 198h0M1098 198h0M1110 198h0M1122 198h0M1158 198h0M1170 198h0M1182 198h0M1194 198h0M1206 198h0M1218 198h0M1230 198h0M1242 198h0M1254 198h0M1266 198h0M1278 198h0M12 210h0M24 210h0M36 210h0M48 210h0M60 210h0M72 210h0M84 210h0M96 210h0M108 210h0M120 210h0M132 210h0M144 210h0M156 210h0M276 210h0M288 210h0M780 210h0M804 210h0M816 210h0M828 210h0M840 210h0M852 210h0M864 210h0M876 210h0M888 210h0M900 210h0M912 210h0M924 210h0M936 210h0M948 210h0M960 210h0M972 210h0M984 210h0M996 210h0M1008 210h0M1020 210h0M1032 210h0M1044 210h0M1056 210h0M1068 210h0M1080 210h0M1092 210h0M1104 210h0M1116 210h0M1128 210h0M1164 210h0M1176 210h0M1188 210h0M1200 210h0M1212 210h0M1224 210h0M1236 210h0M1248 210h0M1260 210h0M1272 210h0M1284 210h0M6 222h0M18 222h0M30 222h0M42 222h0M54 222h0M66 222h0M78 222h0M90 222h0M102 222h0M114 222h0M126 222h0M138 222h0M150 222h0M162 222h0M174 222h0M282 222h0M462 222h0M810 222h0M822 222h0M834 222h0M846 222h0M858 222h0M870 222h0M882 222h0M894 222h0M906 222h0M918 222h0M930 222h0M942 222h0M954 222h0M966 222h0M978 222h0M990 222h0M1002 222h0M1014 222h0M1026 222h0M1038 222h0M1050 222h0M1062 222h0M1074 222h0M1086 222h0M1098 222h0M1110 222h0M1122 222h0M1134 222h0M1158 222h0M1170 222h0M1182 222h0M1194 222h0M1206 222h0M1218 222h0M1230 222h0M1242 222h0M1254 222h0M1266 222h0M1278 222h0M12 234h0M24 234h0M36 234h0M48 234h0M60 234h0M72 234h0M84 234h0M96 234h0M108 234h0M120 234h0M132 234h0M144 234h0M156 234h0M180 234h0M840 234h0M852 234h0M864 234h0M876 234h0M888 234h0M900 234h0M912 234h0M924 234h0M936 234h0M948 234h0M960 234h0M972 234h0M984 234h0M996 234h0M1008 234h0M1020 234h0M1032 234h0M1044 234h0M1056 234h0M1068 234h0M1080 234h0M1092 234h0M1104 234h0M1116 234h0M1128 234h0M1140 234h0M1152 234h0M1164 234h0M1176 234h0M1188 234h0M1200 234h0M1212 234h0M1224 234h0M1236 234h0M1248 234h0M1260 234h0M1272 234h0M1284 234h0M6 246h0M18 246h0M30 246h0M42 246h0M54 246h0M66 246h0M78 246h0M90 246h0M102 246h0M114 246h0M126 246h0M138 246h0M150 246h0M174 246h0M822 246h0M846 246h0M858 246h0M870 246h0M882 246h0M894 246h0M906 246h0M918 246h0M930 246h0M942 246h0M954 246h0M966 246h0M978 246h0M990 246h0M1002 246h0M1014 246h0M1026 246h0M1038 246h0M1050 246h0M1062 246h0M1074 246h0M1086 246h0M1098 246h0M1110 246h0M1122 246h0M1134 246h0M1146 246h0M1158 246h0M1170 246h0M1182 246h0M1194 246h0M1206 246h0M1218 246h0M1230 246h0M1266 246h0M12 258h0M24 258h0M36 258h0M48 258h0M60 258h0M72 258h0M84 258h0M96 258h0M108 258h0M120 258h0M132 258h0M144 258h0M852 258h0M864 258h0M876 258h0M888 258h0M900 258h0M912 258h0M924 258h0M936 258h0M948 258h0M960 258h0M972 258h0M984 258h0M996 258h0M1008 258h0M1020 258h0M1032 258h0M1044 258h0M1056 258h0M1068 258h0M1080 258h0M1092 258h0M1104 258h0M1116 258h0M1128 258h0M1140 258h0M1152 258h0M1164 258h0M1176 258h0M1188 258h0M1200 258h0M1212 258h0M1224 258h0M1236 258h0M1248 258h0M6 270h0M18 270h0M30 270h0M42 270h0M54 270h0M66 270h0M78 270h0M90 270h0M102 270h0M114 270h0M126 270h0M138 270h0M174 270h0M846 270h0M858 270h0M870 270h0M882 270h0M894 270h0M906 270h0M918 270h0M930 270h0M942 270h0M954 270h0M966 270h0M978 270h0M990 270h0M1002 270h0M1014 270h0M1026 270h0M1038 270h0M1050 270h0M1062 270h0M1074 270h0M1086 270h0M1098 270h0M1110 270h0M1122 270h0M1134 270h0M1146 270h0M1158 270h0M1170 270h0M1182 270h0M1194 270h0M1206 270h0M1218 270h0M1230 270h0M1242 270h0M12 282h0M24 282h0M36 282h0M48 282h0M60 282h0M72 282h0M84 282h0M96 282h0M108 282h0M120 282h0M132 282h0M840 282h0M852 282h0M864 282h0M876 282h0M888 282h0M900 282h0M912 282h0M924 282h0M936 282h0M948 282h0M960 282h0M972 282h0M984 282h0M996 282h0M1008 282h0M1020 282h0M1032 282h0M1044 282h0M1056 282h0M1068 282h0M1080 282h0M1092 282h0M1104 282h0M1116 282h0M1128 282h0M1140 282h0M1152 282h0M1164 282h0M1176 282h0M1188 282h0M1200 282h0M1212 282h0M1224 282h0M1236 282h0M1248 282h0M1260 282h0M1284 282h0M6 294h0M18 294h0M30 294h0M42 294h0M54 294h0M66 294h0M78 294h0M90 294h0M102 294h0M114 294h0M126 294h0M174 294h0M846 294h0M858 294h0M870 294h0M882 294h0M894 294h0M906 294h0M918 294h0M930 294h0M942 294h0M954 294h0M966 294h0M978 294h0M990 294h0M1002 294h0M1014 294h0M1026 294h0M1038 294h0M1050 294h0M1062 294h0M1074 294h0M1086 294h0M1098 294h0M1110 294h0M1122 294h0M1134 294h0M1146 294h0M1158 294h0M1170 294h0M1182 294h0M1194 294h0M1206 294h0M1218 294h0M1230 294h0M1254 294h0M12 306h0M24 306h0M36 306h0M48 306h0M60 306h0M72 306h0M84 306h0M96 306h0M108 306h0M168 306h0M180 306h0M192 306h0M840 306h0M852 306h0M864 306h0M876 306h0M888 306h0M900 306h0M912 306h0M924 306h0M936 306h0M948 306h0M960 306h0M972 306h0M984 306h0M996 306h0M1008 306h0M1020 306h0M1032 306h0M1044 306h0M1056 306h0M1068 306h0M1080 306h0M1092 306h0M1104 306h0M1116 306h0M1128 306h0M1140 306h0M1152 306h0M1164 306h0M1176 306h0M1188 306h0M1200 306h0M1212 306h0M6 318h0M18 318h0M30 318h0M42 318h0M54 318h0M66 318h0M78 318h0M834 318h0M846 318h0M858 318h0M870 318h0M882 318h0M894 318h0M906 318h0M918 318h0M930 318h0M942 318h0M954 318h0M966 318h0M978 318h0M990 318h0M1002 318h0M1014 318h0M1026 318h0M1038 318h0M1050 318h0M1062 318h0M1074 318h0M1086 318h0M1098 318h0M1110 318h0M1122 318h0M1134 318h0M1146 318h0M1158 318h0M1170 318h0M1182 318h0M1194 318h0M1206 318h0M12 330h0M24 330h0M36 330h0M48 330h0M60 330h0M72 330h0M840 330h0M852 330h0M864 330h0M876 330h0M888 330h0M900 330h0M912 330h0M924 330h0M936 330h0M948 330h0M960 330h0M972 330h0M984 330h0M996 330h0M1008 330h0M1020 330h0M1032 330h0M1044 330h0M1056 330h0M1068 330h0M1080 330h0M1092 330h0M1104 330h0M1116 330h0M1128 330h0M1140 330h0M1152 330h0M1164 330h0M1176 330h0M1188 330h0M1200 330h0M6 342h0M30 342h0M54 342h0M66 342h0M162 342h0M846 342h0M858 342h0M870 342h0M882 342h0M894 342h0M906 342h0M918 342h0M930 342h0M942 342h0M954 342h0M966 342h0M978 342h0M990 342h0M1002 342h0M1014 342h0M1026 342h0M1038 342h0M1050 342h0M1062 342h0M1074 342h0M1086 342h0M1098 342h0M1110 342h0M1122 342h0M1134 342h0M1146 342h0M1158 342h0M1170 342h0M1182 342h0M60 354h0M72 354h0M156 354h0M840 354h0M852 354h0M864 354h0M876 354h0M888 354h0M900 354h0M912 354h0M924 354h0M936 354h0M948 354h0M960 354h0M972 354h0M984 354h0M996 354h0M1008 354h0M1020 354h0M1032 354h0M1044 354h0M1056 354h0M1068 354h0M1080 354h0M1092 354h0M1104 354h0M1116 354h0M1128 354h0M1140 354h0M1152 354h0M1164 354h0M1176 354h0M6 366h0M18 366h0M30 366h0M66 366h0M78 366h0M150 366h0M162 366h0M846 366h0M858 366h0M870 366h0M882 366h0M894 366h0M906 366h0M918 366h0M930 366h0M942 366h0M954 366h0M966 366h0M978 366h0M990 366h0M1002 366h0M1014 366h0M1026 366h0M1038 366h0M1050 366h0M1062 366h0M1074 366h0M1086 366h0M1098 366h0M1110 366h0M1122 366h0M1134 366h0M1146 366h0M1158 366h0M1170 366h0M12 378h0M72 378h0M108 378h0M132 378h0M144 378h0M156 378h0M852 378h0M864 378h0M876 378h0M888 378h0M900 378h0M912 378h0M924 378h0M936 378h0M948 378h0M960 378h0M972 378h0M984 378h0M996 378h0M1008 378h0M1020 378h0M1032 378h0M1044 378h0M1056 378h0M1068 378h0M1080 378h0M1092 378h0M1104 378h0M1116 378h0M1128 378h0M1140 378h0M1152 378h0M1164 378h0M6 390h0M66 390h0M102 390h0M114 390h0M126 390h0M138 390h0M870 390h0M882 390h0M894 390h0M906 390h0M918 390h0M930 390h0M942 390h0M954 390h0M966 390h0M978 390h0M990 390h0M1002 390h0M1014 390h0M1026 390h0M1038 390h0M1050 390h0M1062 390h0M1074 390h0M1086 390h0M1098 390h0M1110 390h0M1122 390h0M1134 390h0M1146 390h0M1158 390h0M12 402h0M108 402h0M876 402h0M888 402h0M900 402h0M912 402h0M924 402h0M936 402h0M948 402h0M960 402h0M972 402h0M984 402h0M996 402h0M1008 402h0M1020 402h0M1032 402h0M1044 402h0M1056 402h0M1068 402h0M1080 402h0M1092 402h0M1104 402h0M1116 402h0M1128 402h0M1140 402h0M1152 402h0M6 414h0M18 414h0M90 414h0M894 414h0M906 414h0M918 414h0M930 414h0M942 414h0M954 414h0M966 414h0M978 414h0M990 414h0M1002 414h0M1014 414h0M1026 414h0M1038 414h0M1050 414h0M1062 414h0M1074 414h0M1086 414h0M1098 414h0M1110 414h0M1122 414h0M1134 414h0M12 426h0M24 426h0M888 426h0M912 426h0M924 426h0M936 426h0M948 426h0M960 426h0M972 426h0M984 426h0M996 426h0M1008 426h0M1020 426h0M1032 426h0M1044 426h0M1056 426h0M1068 426h0M1080 426h0M1092 426h0M1104 426h0M1116 426h0M1128 426h0M6 438h0M18 438h0M894 438h0M918 438h0M930 438h0M942 438h0M954 438h0M966 438h0M978 438h0M990 438h0M1002 438h0M1014 438h0M1026 438h0M1038 438h0M1050 438h0M1062 438h0M1110 438h0M1122 438h0M1134 438h0M12 450h0M24 450h0M924 450h0M936 450h0M948 450h0M960 450h0M972 450h0M984 450h0M996 450h0M1008 450h0M1020 450h0M1032 450h0M1128 450h0M6 462h0M18 462h0M906 462h0M930 462h0M942 462h0M954 462h0M966 462h0M978 462h0M990 462h0M1002 462h0M1014 462h0M1134 462h0M12 474h0M912 474h0M948 474h0M960 474h0M972 474h0M984 474h0M996 474h0M1008 474h0M1020 474h0M1140 474h0M6 486h0M954 486h0M966 486h0M978 486h0M990 486h0M1002 486h0M1014 486h0M1170 486h0M24 498h0M960 498h0M972 498h0M984 498h0M996 498h0M1008 498h0M1020 498h0M18 510h0M966 510h0M978 510h0M990 510h0M1002 510h0M1014 510h0M1134 510h0M972 522h0M984 522h0M996 522h0M1008 522h0M1020 522h0M1152 522h0M1200 522h0M978 534h0M990 534h0M1002 534h0M1014 534h0M1074 534h0M1086 534h0M1170 534h0M1182 534h0M612 546h0M972 546h0M984 546h0M996 546h0M1008 546h0M1020 546h0M1080 546h0M1200 546h0M1212 546h0M18 558h0M30 558h0M990 558h0M1002 558h0M1014 558h0M1026 558h0M1038 558h0M1050 558h0M1062 558h0M1074 558h0M1086 558h0M1170 558h0M1206 558h0M1242 558h0M24 570h0M1008 570h0M1020 570h0M1032 570h0M1044 570h0M1056 570h0M1068 570h0M1080 570h0M18 582h0M1026 582h0M1050 582h0M1062 582h0M1074 582h0M1086 582h0M1110 582h0M24 594h0M1068 594h0M1080 594h0M1092 594h0M1104 594h0M1116 594h0"/>
+              <path class="pacific__arc" d="M152 386.6L164.1 373.2L176.7 360L189.7 347.1L203.2 334.4L217.2 322.1L231.7 310.2L246.9 298.7L262.6 287.5L278.9 276.8L295.9 266.6L313.5 256.9L331.8 247.8L350.7 239.3L370.3 231.4L390.5 224.2L411.4 217.7L432.9 211.9L454.8 207L477.3 202.9L500.1 199.6L523.3 197.2L546.7 195.7L570.2 195.2L593.7 195.5L617.1 196.7L640.4 198.9L663.3 201.9L685.9 205.8L708 210.5L729.6 216L750.6 222.3L771 229.4L790.8 237.1L809.9 245.4L828.4 254.4L846.2 263.9"/>
+              <path class="pacific__arc" d="M152 386.6L165.6 375.6L179.7 364.8L194.1 354.4L209 344.4L224.3 334.8L240 325.6L256.2 316.8L272.8 308.5L289.9 300.7L307.4 293.4L325.3 286.6L343.7 280.5L362.4 274.9L381.5 270L401 265.7L420.7 262L440.7 259.1L460.9 256.8L481.2 255.3L501.6 254.5L522.1 254.4L542.5 255L562.9 256.4L583.1 258.5L603.2 261.2L623 264.7L642.5 268.8L661.7 273.6L680.5 279.1L699 285.1L717 291.7L734.6 298.8L751.8 306.5L768.5 314.7L784.8 323.4L800.6 332.5L816 342L831 352L845.6 362.3"/>
+              <path class="pacific__arc" d="M152 386.6L165.7 376L179.7 365.7L194.2 355.8L209.1 346.2L224.3 337L240 328.2L256.1 319.9L272.6 312L289.5 304.6L306.9 297.7L324.6 291.4L342.7 285.6L361.2 280.4L379.9 275.8L399 271.8L418.4 268.5L437.9 265.8L457.7 263.8L477.5 262.5L497.5 261.8L517.4 261.9L537.4 262.7L557.2 264.1L576.9 266.2L596.4 269L615.7 272.5L634.8 276.5L653.5 281.2L671.9 286.6L689.9 292.4L707.6 298.9L724.8 305.9L741.7 313.3L758.1 321.3L774.2 329.7L789.8 338.6L805 347.8L819.8 357.5L834.1 367.5L848.2 377.8L861.8 388.5L875.1 399.5"/>
+              <path class="pacific__arc" d="M152 386.6L164.2 373.7L176.8 361.1L189.9 348.7L203.4 336.6L217.5 324.9L232 313.5L247.1 302.5L262.7 291.9L278.9 281.8L295.6 272.1L313 263L331 254.3L349.6 246.3L368.7 238.9L388.5 232.1L408.8 226L429.6 220.6L450.9 216L472.6 212.2L494.6 209.1L516.9 206.9L539.4 205.5L562 205L584.7 205.3L607.2 206.5L629.5 208.6L651.7 211.4L673.4 215.1L694.8 219.5L715.7 224.7L736.2 230.7L756 237.3L775.3 244.6L794 252.5L812.2 261L829.7 270L846.6 279.6L862.9 289.6L878.6 300.1L893.8 311L908.5 322.3L922.6 334L936.3 346L949.4 358.3L962.2 370.9L974.5 383.7L986.4 396.8L998 410.1L1009.2 423.6L1020.1 437.3"/>
+              <path class="pacific__arc" d="M152 386.6L161.2 370.7L170.8 354.9L180.8 339.3L191.3 323.9L202.3 308.7L213.9 293.7L226 278.9L238.9 264.5L252.4 250.3L266.8 236.4L281.9 223L298 209.9L315.1 197.3L333.3 185.2L352.5 173.7L373 162.9L394.7 152.7L417.6 143.3L441.8 134.7L467.2 127.1L493.8 120.4L521.5 114.8L550.1 110.4L579.5 107.2L609.5 105.1L639.7 104.4L670 104.9L700 106.7L729.5 109.7L758.3 114L786.2 119.4L813 125.8L838.6 133.3L863 141.7L886.1 151L908 161L928.7 171.8L948.2 183.2L966.5 195.2L983.8 207.7L1000 220.6L1015.4 234L1029.9 247.8L1043.6 261.9L1056.5 276.4L1068.8 291.1L1080.5 306L1091.6 321.2"/>
+              <path class="pacific__arc" d="M152 386.6L159.1 369.2L166.7 352L174.6 334.8L182.9 317.7L191.7 300.8L200.9 284L210.8 267.4L221.3 250.9L232.5 234.7L244.5 218.6L257.4 202.9L271.2 187.4L286.2 172.3L302.4 157.6L320 143.3L339.2 129.5L360 116.3L382.8 103.8L407.5 92.1L434.4 81.3L463.5 71.5L494.9 62.8L528.6 55.5L564.2 49.6L601.6 45.2L640.2 42.5L679.5 41.5L718.8 42.3L757.5 44.8L795 49L830.9 54.8L864.8 61.9L896.5 70.5L925.8 80.1L953 90.9L978 102.5L1000.9 114.9L1021.9 128L1041.3 141.7L1059 155.9L1075.4 170.6L1090.5 185.7L1104.5 201.1L1117.5 216.9L1129.6 232.9L1140.9 249.1L1151.4 265.5L1161.4 282.1L1170.7 298.9L1179.5 315.8L1187.9 332.9"/>
+              <path class="pacific__arc" d="M152 386.6L158.4 369L165.1 351.4L172.2 333.9L179.6 316.5L187.5 299.2L195.8 282L204.6 264.9L214.1 248L224.2 231.3L235.1 214.7L246.8 198.4L259.5 182.3L273.2 166.5L288.2 151L304.6 135.9L322.5 121.2L342.2 107L363.9 93.5L387.9 80.6L414.2 68.6L443.2 57.5L475.1 47.5L509.7 38.9L547.2 31.6L587.1 26L629 22.2L672.2 20.2L715.9 20.2L759.1 22.2L801.1 26L841 31.6L878.5 38.8L913.1 47.5L945 57.5L974 68.5L1000.4 80.6L1024.3 93.4L1046 107L1065.7 121.1L1083.7 135.8L1100.1 150.9L1115.1 166.4L1128.8 182.2L1141.5 198.3L1153.2 214.6L1164.1 231.2L1174.2 247.9L1183.7 264.9L1192.5 281.9L1200.9 299.1L1208.7 316.4"/>
+              <path class="pacific__arc" d="M152 386.6L162.1 371.6L172.7 356.7L183.7 342.1L195.2 327.6L207.2 313.4L219.8 299.5L232.9 285.8L246.7 272.5L261.2 259.5L276.4 246.9L292.5 234.7L309.3 223L327 211.8L345.7 201.2L365.3 191.1L385.8 181.7L407.3 173.1L429.8 165.2L453.3 158.1L477.6 151.9L502.7 146.7L528.6 142.5L555 139.3L581.8 137.2L608.9 136.2L636.1 136.3L663.2 137.5L690 139.8L716.3 143.1L742.1 147.5L767.1 152.9L791.3 159.2L814.5 166.4L836.9 174.4L858.3 183.2L878.6 192.7L898.1 202.9L916.6 213.6L934.1 224.9L950.9 236.7L966.7 249L981.8 261.6L996.2 274.7L1009.9 288.1L1023 301.7L1035.4 315.7L1047.4 330L1058.8 344.4L1069.7 359.1L1080.2 374L1090.3 389.1L1100 404.3L1109.4 419.7L1118.5 435.2L1127.3 450.8L1135.9 466.5L1144.2 482.4"/>
+              <circle class="pacific__ring" cx="846.2" cy="263.9" r="9"/>
+              <circle class="pacific__pin" cx="846.2" cy="263.9" r="4.5"/>
+              <circle class="pacific__ring" cx="845.6" cy="362.3" r="9"/>
+              <circle class="pacific__pin" cx="845.6" cy="362.3" r="4.5"/>
+              <circle class="pacific__ring" cx="875.1" cy="399.5" r="9"/>
+              <circle class="pacific__pin" cx="875.1" cy="399.5" r="4.5"/>
+              <circle class="pacific__ring" cx="1020.1" cy="437.3" r="9"/>
+              <circle class="pacific__pin" cx="1020.1" cy="437.3" r="4.5"/>
+              <circle class="pacific__ring" cx="1091.6" cy="321.2" r="9"/>
+              <circle class="pacific__pin" cx="1091.6" cy="321.2" r="4.5"/>
+              <circle class="pacific__ring" cx="1187.9" cy="332.9" r="9"/>
+              <circle class="pacific__pin" cx="1187.9" cy="332.9" r="4.5"/>
+              <circle class="pacific__ring" cx="1208.7" cy="316.4" r="9"/>
+              <circle class="pacific__pin" cx="1208.7" cy="316.4" r="4.5"/>
+              <circle class="pacific__ring" cx="1144.2" cy="482.4" r="9"/>
+              <circle class="pacific__pin" cx="1144.2" cy="482.4" r="4.5"/>
+              <circle class="pacific__ring pacific__ring--home" cx="152" cy="386.6" r="13"/>
+              <circle class="pacific__pin pacific__pin--home" cx="152" cy="386.6" r="6"/>
+            </svg>
+            <!-- Labels are HTML so they stay readable at every width; positions match the pins.
+                 Labels marked --minor are hidden below 900px, where they would collide. -->
+            <div aria-hidden="true">
+              <span class="pacific__label pacific__label--home" style="--x: 11.81%; --y: 64.44%">Fujisawa<span lang="ja">藤沢</span></span>
+              <span class="pacific__label pacific__label--right pacific__label--seattle pacific__label--minor" style="--x: 65.75%; --y: 43.99%">Seattle</span>
+              <span class="pacific__label pacific__label--left pacific__label--sf" style="--x: 65.7%; --y: 60.38%">San Francisco</span>
+              <span class="pacific__label pacific__label--right pacific__label--la pacific__label--minor" style="--x: 67.99%; --y: 66.58%">Los Angeles</span>
+              <span class="pacific__label pacific__label--below pacific__label--austin pacific__label--minor" style="--x: 79.26%; --y: 72.89%">Austin</span>
+              <span class="pacific__label pacific__label--above pacific__label--chicago pacific__label--minor" style="--x: 84.81%; --y: 53.54%">Chicago</span>
+              <span class="pacific__label pacific__label--below pacific__label--ny" style="--x: 92.3%; --y: 55.48%">New York</span>
+              <span class="pacific__label pacific__label--above pacific__label--boston pacific__label--minor" style="--x: 93.92%; --y: 52.73%">Boston</span>
+              <span class="pacific__label pacific__label--right pacific__label--miami pacific__label--minor" style="--x: 88.9%; --y: 80.4%">Miami</span>
+            </div>
+          </div>
+          <figcaption class="pacific__caption">
+            Great-circle routes from Fujisawa to eight US cities, from 4,807 miles (7,737 km) to Seattle
+            to 7,483 miles (12,043 km) to Miami.
+          </figcaption>
+        </figure>
+
+        <ul class="clocks" aria-label="Local times">
+          <li class="clock" data-zone="Asia/Tokyo">
+            <span class="clock__city">Fujisawa <span lang="ja">藤沢</span></span>
+            <span class="clock__time" data-zone-time hidden></span>
+            <span class="clock__note">Japan Standard Time (UTC+9)</span>
+          </li>
+          <li class="clock" data-zone="America/Los_Angeles">
+            <span class="clock__city">US Pacific</span>
+            <span class="clock__time" data-zone-time hidden></span>
+            <span class="clock__note" data-zone-diff hidden></span>
+            <span class="clock__note">Seattle, San Francisco, Los Angeles</span>
+          </li>
+          <li class="clock" data-zone="America/Chicago">
+            <span class="clock__city">US Central</span>
+            <span class="clock__time" data-zone-time hidden></span>
+            <span class="clock__note" data-zone-diff hidden></span>
+            <span class="clock__note">Chicago, Austin</span>
+          </li>
+          <li class="clock" data-zone="America/New_York">
+            <span class="clock__city">US Eastern</span>
+            <span class="clock__time" data-zone-time hidden></span>
+            <span class="clock__note" data-zone-diff hidden></span>
+            <span class="clock__note">New York, Boston, Miami</span>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- 06 CONTACT -->
+    <section class="section contact" id="contact" aria-labelledby="contact-title">
+      <div class="wrap grid">
+        <div class="section__aside">
+          <span class="section__num" aria-hidden="true">06</span>
+          <p class="section__label">Contact</p>
+          <span class="kanji" data-reveal="brush" lang="ja" aria-hidden="true">お問い合わせ</span>
+        </div>
+
+        <div class="section__body">
+          <h2 id="contact-title" class="section-title contact__title" data-reveal>Let’s build something good together.</h2>
+          <p class="lead section__intro">
+            Tell us about your product, your team and where you need help.
+            We’d be glad to talk it through.
+          </p>
+          <div class="actions">
+            <a class="button" href="mailto:julienmoreau759@gmail.com?subject=Project%20inquiry%20for%20Topis%20Mos">Email us <span class="button__arrow" aria-hidden="true">→</span></a>
+            <a class="button button--quiet" href="https://calendly.com/julienmoreau759/30min" target="_blank" rel="noopener">Book a call <span aria-hidden="true">↗</span><span class="visually-hidden"> (opens Calendly in a new tab)</span></a>
+          </div>
+
+          <!-- The address is shown as text too: "Email us" opens the visitor's mail app,
+               which does nothing on computers without one set up. -->
+          <dl class="details">
+            <div>
+              <dt>Email</dt>
+              <dd><a class="details__link" href="mailto:julienmoreau759@gmail.com">julienmoreau759@gmail.com</a></dd>
+            </div>
+            <div>
+              <dt>Book a call</dt>
+              <dd><a class="details__link" href="https://calendly.com/julienmoreau759/30min" target="_blank" rel="noopener">30 minutes on Calendly<span class="visually-hidden"> (opens in a new tab)</span></a></dd>
+              <dd class="details__note">Pick a time that suits you; it shows in your time zone.</dd>
+            </div>
+            <div>
+              <dt>Location</dt>
+              <dd>Fujisawa, Kanagawa, Japan</dd>
+              <dd class="details__ja" lang="ja">神奈川県藤沢市</dd>
+            </div>
+          </dl>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap grid site-footer__grid">
+      <div class="site-footer__brand">
+        <a class="logo logo--large" href="#top">Topis Mos</a>
+        <p class="site-footer__tagline">Made with care in Fujisawa.</p>
+      </div>
+      <nav class="site-footer__col site-footer__col--explore" aria-labelledby="footer-explore">
+        <h2 id="footer-explore">Explore</h2>
+        <ul>
+          <li><a href="#about">About</a></li>
+          <li><a href="#way">Our way</a></li>
+          <li><a href="#services">What we do</a></li>
+          <li><a href="#process">How we work</a></li>
+        </ul>
+      </nav>
+      <div class="site-footer__col site-footer__col--contact">
+        <h2>Contact</h2>
+        <ul>
+          <li><a href="mailto:julienmoreau759@gmail.com">julienmoreau759@gmail.com</a></li>
+          <li><a href="https://calendly.com/julienmoreau759/30min" target="_blank" rel="noopener">Book a call<span class="visually-hidden"> (opens in a new tab)</span></a></li>
+          <li>Fujisawa, Kanagawa, Japan</li>
+          <li lang="ja">神奈川県藤沢市</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="wrap legal">
+      <p>© 2026 Topis Mos. All rights reserved.</p>
+      <p lang="ja" aria-hidden="true" class="legal__place">藤沢</p>
+    </div>
+  </footer>
+</body>
+</html>

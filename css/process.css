@@ -1,0 +1,228 @@
+/* "How a project works": four steps joined by a line that fills with indigo on scroll.
+   Markup:
+   <ol class="process" data-process>
+     <li class="process__step"><span class="process__num">01</span><h3>…</h3><p>…</p></li> ×4
+   </ol>
+
+   States, from least to most capable browser:
+   - No JS / no support: line and circles shown complete (finished state).
+   - Reduced motion: same finished state, no animation.
+   - animation-timeline support: CSS scroll-driven animation (no JS involved).
+   - Otherwise: process.js adds .is-io and marks steps .is-reached via IntersectionObserver. */
+
+.process {
+  --num-size: 2.5rem;
+  --gap: clamp(1rem, 3vw, 2.5rem);
+  position: relative;
+  display: grid;
+  gap: var(--gap);
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.process__step {
+  position: relative;
+}
+
+.process__num {
+  position: relative;
+  z-index: 1;
+  display: inline-grid;
+  place-items: center;
+  width: var(--num-size);
+  height: var(--num-size);
+  border: 1px solid var(--ai, #264477);
+  border-radius: 50%;
+  color: var(--washi, #f5f0e6);
+  font-variant-numeric: tabular-nums;
+  isolation: isolate;
+}
+
+/* Filled circle behind the number (scaled, so it animates with transform only) */
+.process__num::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  border-radius: 50%;
+  background: var(--ai, #264477);
+}
+
+/* Desktop: one horizontal line from the first circle's centre to the last one's.
+   Each of 4 equal columns is (100% - 3 gaps) / 4, so centre-to-centre = 75% + 0.75 gap. */
+@media (min-width: 900px) {
+  .process {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+
+  .process::before,
+  .process::after {
+    content: "";
+    position: absolute;
+    top: calc(var(--num-size) / 2);
+    left: calc(var(--num-size) / 2);
+    width: calc(75% + 0.75 * var(--gap));
+    height: 1px;
+    transform-origin: left;
+  }
+
+  .process::before {
+    background: var(--nezumi, #8a8580);
+    opacity: 0.5;
+  }
+
+  .process::after {
+    background: var(--ai, #264477);
+  }
+}
+
+/* Mobile: a vertical segment under each circle, down to the next step's circle */
+@media (max-width: 899.98px) {
+  .process__step:not(:last-child)::before,
+  .process__step:not(:last-child)::after {
+    content: "";
+    position: absolute;
+    top: var(--num-size);
+    bottom: calc(-1 * var(--gap));
+    left: calc(var(--num-size) / 2);
+    width: 1px;
+    transform-origin: top;
+  }
+
+  .process__step:not(:last-child)::before {
+    background: var(--nezumi, #8a8580);
+    opacity: 0.5;
+  }
+
+  .process__step:not(:last-child)::after {
+    background: var(--ai, #264477);
+  }
+}
+
+/* Empty (not yet reached) circle: outline only, number in indigo */
+@keyframes process-num-fill {
+  from { color: var(--ai, #264477); }
+  to   { color: var(--washi, #f5f0e6); }
+}
+
+@keyframes process-circle-fill {
+  from { transform: scale(0); }
+  to   { transform: scale(1); }
+}
+
+@keyframes process-fill-x {
+  from { transform: scaleX(0); }
+  to   { transform: scaleX(1); }
+}
+
+@keyframes process-fill-y {
+  from { transform: scaleY(0); }
+  to   { transform: scaleY(1); }
+}
+
+/* --- Scroll-driven version ------------------------------------------------ */
+@supports (animation-timeline: view()) {
+  @media (prefers-reduced-motion: no-preference) {
+    .process {
+      view-timeline-name: --process;
+    }
+
+    @media (min-width: 900px) {
+      /* The line fills between cover 20% and cover 50% of the section's pass through
+         the viewport; step k is reached at 20% + 10% × k. */
+      .process::after {
+        animation: process-fill-x linear both;
+        animation-timeline: --process;
+        animation-range: cover 20% cover 50%;
+      }
+
+      .process__num,
+      .process__num::before {
+        animation-timing-function: linear;
+        animation-fill-mode: both;
+        animation-timeline: --process;
+      }
+
+      .process__num { animation-name: process-num-fill; }
+      .process__num::before { animation-name: process-circle-fill; }
+
+      .process__step:nth-child(1) .process__num,
+      .process__step:nth-child(1) .process__num::before { animation-range: cover 19% cover 21%; }
+      .process__step:nth-child(2) .process__num,
+      .process__step:nth-child(2) .process__num::before { animation-range: cover 29% cover 31%; }
+      .process__step:nth-child(3) .process__num,
+      .process__step:nth-child(3) .process__num::before { animation-range: cover 39% cover 41%; }
+      .process__step:nth-child(4) .process__num,
+      .process__step:nth-child(4) .process__num::before { animation-range: cover 49% cover 51%; }
+    }
+
+    @media (max-width: 899.98px) {
+      /* Each step has its own timeline: its circle fills as it reaches mid-screen,
+         then its segment draws down toward the next step. */
+      .process__step {
+        view-timeline-name: --step;
+      }
+
+      .process__num,
+      .process__num::before {
+        animation-timing-function: linear;
+        animation-fill-mode: both;
+        animation-timeline: --step;
+        animation-range: entry 100% cover 45%;
+      }
+
+      .process__num { animation-name: process-num-fill; }
+      .process__num::before { animation-name: process-circle-fill; }
+
+      .process__step:not(:last-child)::after {
+        animation: process-fill-y linear both;
+        animation-timeline: --step;
+        animation-range: cover 45% exit 40%;
+      }
+    }
+  }
+}
+
+/* --- IntersectionObserver fallback (process.js adds .is-io) --------------- */
+@media (prefers-reduced-motion: no-preference) {
+  .process.is-io .process__num {
+    color: var(--ai, #264477);
+    transition: color 0.3s ease;
+  }
+
+  .process.is-io .process__num::before {
+    transform: scale(0);
+    transition: transform 0.35s cubic-bezier(0.2, 0.6, 0.2, 1);
+  }
+
+  .process.is-io .process__step.is-reached .process__num {
+    color: var(--washi, #f5f0e6);
+  }
+
+  .process.is-io .process__step.is-reached .process__num::before {
+    transform: scale(1);
+  }
+
+  @media (min-width: 900px) {
+    .process.is-io::after {
+      transform: scaleX(0);
+      transition: transform 0.6s cubic-bezier(0.2, 0.6, 0.2, 1);
+    }
+
+    .process.is-io[data-reached="2"]::after { transform: scaleX(0.3333); }
+    .process.is-io[data-reached="3"]::after { transform: scaleX(0.6667); }
+    .process.is-io[data-reached="4"]::after { transform: scaleX(1); }
+  }
+
+  @media (max-width: 899.98px) {
+    .process.is-io .process__step:not(:last-child)::after {
+      transform: scaleY(0);
+      transition: transform 0.6s cubic-bezier(0.2, 0.6, 0.2, 1) 0.2s;
+    }
+
+    .process.is-io .process__step.is-reached:not(:last-child)::after {
+      transform: scaleY(1);
+    }
+  }
+}

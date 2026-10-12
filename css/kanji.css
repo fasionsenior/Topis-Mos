@@ -1,0 +1,57 @@
+/* Vertical kanji labels painted in with a brush.
+   Markup: <span class="kanji" data-reveal="brush" lang="ja">改善</span>
+   The ink line is drawn inside the label's own box (padding on the right, cancelled by a
+   negative margin so the surrounding layout doesn't move), so the same mask sweep that
+   paints the characters also draws the line downward, perfectly in sync. */
+.kanji {
+  --kanji-line-gap: 0.5em;
+  position: relative;
+  writing-mode: vertical-rl;
+  padding-right: calc(var(--kanji-line-gap) + 1px);
+  margin-right: calc(-1 * (var(--kanji-line-gap) + 1px));
+}
+
+.kanji::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 1px;
+  background: currentColor;
+  opacity: 0.5;
+}
+
+/* Hidden state only when: JS is running, motion is allowed, and masks are supported.
+   Anything else shows the finished label with no animation. */
+@supports (mask-image: linear-gradient(#000, #000)) or (-webkit-mask-image: linear-gradient(#000, #000)) {
+  @media (prefers-reduced-motion: no-preference) {
+    .js .kanji[data-reveal="brush"] {
+      /* Opaque top half, soft 10% brush edge, transparent bottom half.
+         Sliding the mask up moves the soft edge down the label. */
+      -webkit-mask-image: linear-gradient(to bottom, #000 0%, #000 45%, transparent 55%, transparent 100%);
+      mask-image: linear-gradient(to bottom, #000 0%, #000 45%, transparent 55%, transparent 100%);
+      -webkit-mask-size: 100% 220%;
+      mask-size: 100% 220%;
+      -webkit-mask-repeat: no-repeat;
+      mask-repeat: no-repeat;
+      -webkit-mask-position: 0 100%;
+      mask-position: 0 100%;
+      transition:
+        -webkit-mask-position 0.8s cubic-bezier(0.45, 0.05, 0.3, 1),
+        mask-position 0.8s cubic-bezier(0.45, 0.05, 0.3, 1);
+    }
+
+    .js .kanji[data-reveal="brush"].is-revealed {
+      -webkit-mask-position: 0 0;
+      mask-position: 0 0;
+    }
+  }
+}
+
+@media print {
+  .js .kanji[data-reveal="brush"] {
+    -webkit-mask-image: none;
+    mask-image: none;
+  }
+}

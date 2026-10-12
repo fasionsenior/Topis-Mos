@@ -1,0 +1,237 @@
+/* Selected work rows + case-study dialog + metric counters.
+   Row styles are minimal on purpose: keep your existing row design and only take the
+   .is-vt-source / view-transition rules if you already have rows you like. */
+
+/* --- Rows ------------------------------------------------------------------ */
+.work-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.work-row + .work-row {
+  border-top: 1px solid color-mix(in srgb, var(--nezumi, #8a8580) 40%, transparent);
+}
+
+.work-row__link {
+  display: grid;
+  grid-template-columns: minmax(0, 9rem) minmax(0, 1fr) auto;
+  gap: 1.5rem;
+  align-items: center;
+  padding-block: 1.5rem;
+  color: inherit;
+  text-decoration: none;
+}
+
+.work-row__media {
+  display: block;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+}
+
+.work-row__title {
+  margin: 0 0 0.25rem;
+  font-family: "Shippori Mincho", serif;
+}
+
+.work-row__summary {
+  margin: 0;
+}
+
+.work-row__cta {
+  color: var(--ai, #264477);
+  white-space: nowrap;
+}
+
+.work-row__link:hover .work-row__title,
+.work-row__link:focus-visible .work-row__title {
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
+}
+
+@media (max-width: 600px) {
+  .work-row__link {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 0.75rem;
+  }
+}
+
+.media-placeholder {
+  background:
+    repeating-linear-gradient(135deg, transparent 0 10px, color-mix(in srgb, var(--nezumi, #8a8580) 12%, transparent) 10px 11px),
+    color-mix(in srgb, var(--nezumi, #8a8580) 10%, var(--washi, #f5f0e6));
+}
+
+/* --- Dialog ---------------------------------------------------------------- */
+html:has(.case[open]) {
+  overflow: hidden;
+}
+
+.case {
+  width: min(100% - 2rem, 56rem);
+  max-height: calc(100dvh - 2rem);
+  margin: auto;
+  padding: 0; /* clicks on the dialog itself are backdrop clicks */
+  border: 0;
+  background: var(--washi, #f5f0e6);
+  color: var(--sumi, #222);
+  overflow: auto;
+  overscroll-behavior: contain;
+}
+
+.case::backdrop {
+  background: rgb(20 20 20 / 0.45);
+}
+
+.case__inner {
+  position: relative;
+  padding: clamp(1.25rem, 4vw, 3rem);
+}
+
+.case__close {
+  position: sticky;
+  top: 0;
+  float: right;
+  margin: -0.5rem -0.5rem 0 1rem;
+  padding: 0.5rem 0.75rem;
+  border: 1px solid currentColor;
+  background: var(--washi, #f5f0e6);
+  color: inherit;
+  font: inherit;
+  cursor: pointer;
+}
+
+.case__client {
+  margin: 0 0 0.5rem;
+  color: var(--nezumi, #6b6660);
+}
+
+.case__title {
+  margin: 0 0 1.5rem;
+  font-family: "Shippori Mincho", serif;
+  font-size: clamp(1.75rem, 4vw, 2.75rem);
+  line-height: 1.2;
+}
+
+.case__media {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+}
+
+.case__section {
+  margin-top: 2.5rem;
+}
+
+.case__heading {
+  margin: 0 0 0.75rem;
+  font-family: "Shippori Mincho", serif;
+}
+
+.case__metrics {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
+  gap: 1.5rem;
+  margin: 1.5rem 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.metric {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.metric__label {
+  color: var(--nezumi, #6b6660);
+}
+
+.case__stack {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.case__stack li {
+  padding: 0.25rem 0.75rem;
+  border: 1px solid color-mix(in srgb, var(--nezumi, #8a8580) 60%, transparent);
+}
+
+.case__gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr));
+  gap: 1rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.case__gallery-item {
+  display: block;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+}
+
+/* --- Count-up -------------------------------------------------------------- */
+/* All three layers share one grid cell; the invisible sizer holds the final width,
+   so the number never makes the layout jump while it counts. */
+.count {
+  display: inline-grid;
+  justify-items: start;
+  font-family: "Shippori Mincho", serif;
+  font-size: clamp(2rem, 5vw, 3rem);
+  line-height: 1;
+  font-variant-numeric: tabular-nums;
+  color: var(--ai, #264477);
+}
+
+.count__sizer,
+.count__value {
+  grid-area: 1 / 1;
+}
+
+.count__sizer {
+  visibility: hidden;
+}
+
+/* --- Morph (View Transitions) ---------------------------------------------- */
+.work-row.is-vt-source .work-row__title,
+.case[open] .case__title {
+  view-transition-name: case-title;
+}
+
+.work-row.is-vt-source .work-row__media,
+.case[open] .case__media {
+  view-transition-name: case-media;
+}
+
+::view-transition-group(case-title),
+::view-transition-group(case-media) {
+  animation-duration: 0.45s;
+  animation-timing-function: cubic-bezier(0.2, 0.6, 0.2, 1);
+}
+
+/* --- Fade fallback (no View Transitions support) --------------------------- */
+@media (prefers-reduced-motion: no-preference) {
+  .case.is-fading-in,
+  .case.is-fading-in::backdrop {
+    animation: case-fade 0.25s ease-out;
+  }
+
+  .case.is-fading-out,
+  .case.is-fading-out::backdrop {
+    animation: case-fade 0.2s ease-in reverse forwards;
+  }
+}
+
+@keyframes case-fade {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}

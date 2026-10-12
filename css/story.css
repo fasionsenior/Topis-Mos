@@ -1,0 +1,103 @@
+/* Pinned scroll story ("The Japanese way of building software").
+   Default = the simple stacked layout. The pinned layout only applies when story.js adds
+   .is-enhanced, which it does only at ≥900px with motion allowed. */
+
+/* Big words + progress line are decoration for the enhanced layout only */
+.story__pin {
+  display: none;
+}
+
+.story.is-enhanced .story__layout {
+  display: grid;
+  grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
+  gap: clamp(2rem, 6vw, 6rem);
+  align-items: start;
+}
+
+.story.is-enhanced .story__pin {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+  position: sticky;
+  top: calc(50vh - 9rem);
+  height: 18rem;
+}
+
+/* Each step already shows its own word in the stacked layout; on desktop the big pinned
+   word replaces it visually but it stays in the accessibility tree. */
+.story.is-enhanced .story__step-word {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
+.story__words {
+  position: relative;
+  flex: 1;
+  height: 100%;
+}
+
+.story__word {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  font-family: "Shippori Mincho", serif;
+  font-size: clamp(3rem, 6vw, 5.5rem);
+  line-height: 1.1;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+.story__word.is-active {
+  opacity: 1;
+}
+
+/* Progress: a thin vertical track; the fill steps through quarters */
+.story__progress {
+  position: relative;
+  width: 1px;
+  height: 100%;
+  background: var(--nezumi, #8a8580);
+  opacity: 0.6;
+}
+
+.story__progress-fill {
+  position: absolute;
+  inset: 0;
+  background: var(--ai, #264477);
+  transform: scaleY(0.25);
+  transform-origin: top;
+  transition: transform 0.5s cubic-bezier(0.2, 0.6, 0.2, 1);
+}
+
+.story[data-active="1"] .story__progress-fill { transform: scaleY(0.5); }
+.story[data-active="2"] .story__progress-fill { transform: scaleY(0.75); }
+.story[data-active="3"] .story__progress-fill { transform: scaleY(1); }
+
+.story.is-enhanced .story__steps {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.story.is-enhanced .story__step {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 70vh;
+}
+
+/* Dim the children, not the step itself, so this composes with data-reveal's fade.
+   0.65 keeps dimmed body text above WCAG AA (≈4.7:1 for sumi on washi). */
+.story.is-enhanced .story__step > * {
+  opacity: 0.65;
+  transition: opacity 0.4s ease;
+}
+
+.story.is-enhanced .story__step.is-active > * {
+  opacity: 1;
+}
