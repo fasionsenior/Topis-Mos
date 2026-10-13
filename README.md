@@ -12,8 +12,8 @@
 Placeholder copy is marked with class `ph`. Open the page with `?review` (for example
 `index.html?review`) to outline every placeholder that still needs real content.
 
-Contact: "Email us" goes to julienmoreau759@gmail.com and "Book a call" opens
-https://calendly.com/julienmoreau759/30min in a new tab. Both also appear as plain
+Contact: "Email us" goes to hello@topismos.com and "Book a call" opens
+https://calendly.com/hello-topismos/30min in a new tab. Both also appear as plain
 links in the Contact details and the footer.
 
 ## Modules not used by index.html
